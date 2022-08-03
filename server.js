@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8000
+const cors = require('cors')
+
+app.use(cors())
 
 const artists = {
     theweeknd : {
@@ -11,7 +14,7 @@ const artists = {
 
     jojo : {
         age:21,
-        name: 'Giornia jouvan',
+        name: 'Giorno Giovanna',
         birthLocation: 'Italy'
     },
 
@@ -21,7 +24,7 @@ const artists = {
         birthLocation: 'Outer Space'
     },
     '21 dylan' : {
-        age:'dylan',
+        age:29,
         name: 'dylan"',
         birthLocation: 'dylan'
 

@@ -1,8 +1,18 @@
 //new one
 
-document.querySelector('button').addEventListener('click',run)
+document.querySelector('button').addEventListener('click',apirequest)
 
-const run = ()=> {
- artistName = document.querySelector('input').value   
+async function apirequest() {
+    const artistName = document.querySelector('input').value
+
+   try{
+    const res = await fetch(`https://artist-name-api.herokuapp.com/api/${artistName}`)
+    const data = res.json()
+
+    console.log(data)
+    document.querySelector('h2').innerText = data.name
+   } catch(error) {
+    console.log(error)
+   }
+
 }
-alert('working')
