@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 const artists = {
     theweeknd : {
@@ -32,7 +32,7 @@ app.get('/', (request,response)=>{
     response.sendFile(__dirname+'/index.html')
 })
 
-app.listen(8000,()=> {
+app.listen(PORT,()=> {
     console.log(`server is running on port ${PORT}`)
 })
 
