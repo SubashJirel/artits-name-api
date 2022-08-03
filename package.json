@@ -1,0 +1,14 @@
+{
+  "name": "rap-names-api",
+  "version": "1.0.0",
+  "description": "this finds the real name of the rapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Subash Jirel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
