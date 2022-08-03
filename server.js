@@ -35,9 +35,7 @@ app.get('/', (request,response)=>{
     response.sendFile(__dirname+'/index.html')
 })
 
-app.listen(PORT,()=> {
-    console.log(`server is running on port ${PORT}`)
-})
+
 
 //creating the api
 app.get('/api/:artistName',(request,response)=> { // the colons ':' lets us know that its a queryparam & not filepath.
@@ -52,5 +50,9 @@ app.get('/api/:artistName',(request,response)=> { // the colons ':' lets us know
     response.json(artists['21 dylan'])
    }
     //response.json(artists)
+})
+
+app.listen(PORT,()=> {
+    console.log(`server is running on port ${PORT}`)
 })
 

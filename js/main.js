@@ -7,7 +7,7 @@ async function apirequest() {
 
    try{
     const res = await fetch(`https://artist-name-api.herokuapp.com/api/${artistName}`)
-    const data = res.json()
+    const data = await res.json()
 
     console.log(data)
     document.querySelector('h2').innerText = data.name
