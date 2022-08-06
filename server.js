@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8000
-const cors = require('cors')
+const cors = require('cors') //npm install cors --save // for cors realated error
 
 app.use(cors())
 
@@ -39,13 +39,13 @@ app.get('/', (request,response)=>{
 
 //creating the api
 app.get('/api/:artistName',(request,response)=> { // the colons ':' lets us know that its a queryparam & not filepath.
-   // console.log(request.params.artistName)
-   const artistName = request.params.artistName.toLowerCase()
+   // console.log(request.params.artistName) ---> This gives whatever name we put in queryparamet aka /:artistName' 
+   const artistName = request.params.artistName.toLowerCase() //query parameter ma bhako name
 
-   if(artists[artistName]) {   // we use bracket notation because some property has spaces in the name//truthy huda run
+   if(artists[artistName]) { //truthy huda run  // we use bracket notation because some property has spaces in the name
     response.json(artists[artistName]) //if the artists name in query param exist in the js obj . the info is displayed
 
-   }
+   } 
    else {
     response.json(artists['21 dylan'])
    }
@@ -55,4 +55,6 @@ app.get('/api/:artistName',(request,response)=> { // the colons ':' lets us know
 app.listen(PORT,()=> {
     console.log(`server is running on port ${PORT}`)
 })
+
+// procfile tells us how to run the serverjs // to create it do: echo "web: node server.js" > procfile
 
